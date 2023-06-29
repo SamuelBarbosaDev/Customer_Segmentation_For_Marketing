@@ -111,12 +111,12 @@ Você pode baixá-lo em: <https://www.anaconda.com/download/>
 ### Ambiente virtual e Dependências:
 Criando ambiente virtual:
 ```
-conda create -n .churn python=3.10.6
+conda create -n .cluster
 ```
 
 Entrando no ambiente virtual:
 ```
-conda activate .churn
+conda activate .cluster
 ```
 
 Instale as dependências:
