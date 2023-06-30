@@ -1,4 +1,6 @@
+import numpy as np
 import pandas as pd
+from scipy.stats import zscore
 from sklearn.preprocessing import scale
 from sklearn.preprocessing import LabelEncoder
 from DataUnderstanding import DataUnderstanding
@@ -8,11 +10,14 @@ class DataPreparetion(DataUnderstanding):
     def removendo_nulos(self, dataframe: pd.DataFrame) -> pd.DataFrame:
         return dataframe.dropna()
 
-    def removing_outliers_zscore(self, dataframe: pd.DataFrame, zscore: int=3):
-        outlier_rows = dataframe.abs().gt(zscore).any(axis=1)
-        amount_of_outliers = outlier_rows.sum()
-        print(f'Amount of outliers: {amount_of_outliers}')
-        return dataframe[~outlier_rows], outlier_rows
+    def removing_outliers_zscore(self, dataframe: pd.DataFrame, column: list, threshold: int=3):
+        z_scores = np.abs(zscore(dataframe[column]))
+        outlier_indices = np.where(z_scores > threshold)[0]
+        outlier_labels = dataframe.index[outlier_indices]
+        dataframe_cleaned = dataframe.drop(outlier_labels)
+        print(f'Amount of outliers: {len(outlier_indices)}')
+        return dataframe_cleaned
+
 
     def removendo_colunas(self, dataframe: pd.DataFrame, colunas=[]) -> pd.DataFrame:
         return dataframe.drop(colunas, axis=1)
