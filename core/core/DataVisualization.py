@@ -1,11 +1,11 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from DataUnderstanding import DataUnderstanding
+from DataPreparetion import DataPreparetion
 from sklearn.preprocessing import scale
 
 
-class DataVisualization(DataUnderstanding):
+class DataVisualization(DataPreparetion):
     def __init__(self) -> None:
         sns.set_theme(
             context='talk',
