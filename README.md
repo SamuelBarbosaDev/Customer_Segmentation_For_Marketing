@@ -55,7 +55,7 @@ Você foi contratado por uma empresa de e-commerce que está buscando entender
 melhor o comportamento de seus clientes para personalizar as suas campanhas de
 marketing. Para isso, a empresa disponibilizou uma base de dados em csv contendo
 dados sobre clientes, produtos e transações da loja realizadas entre os anos de 2010 e
-2011.
+2011. 
 
 ### Metodologia Aplicada:
 A análise foi realizada utilizando o modelo CRISP-DM, o CRISP-DM (Cross Industry Standard Process for Data Mining) é um modelo padrão de processo para projetos de mineração de dados que define um conjunto de fases e tarefas que devem ser executadas para desenvolver soluções de mineração de dados efetivas.
