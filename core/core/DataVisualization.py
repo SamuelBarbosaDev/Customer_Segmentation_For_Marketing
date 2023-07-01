@@ -55,6 +55,7 @@ class DataVisualization(DataPreparetion):
 
     def gráfico_histplot(self, dataframe: pd.DataFrame, coluna: str):
         sns.histplot(data=dataframe[coluna])
+        plt.xticks(rotation=60, ha='right')
         plt.show()
 
     def gráfico_scatterplot(self, dataframe: pd.DataFrame, x:str, y:str, hue:list, titulo: str=''):
